@@ -1,7 +1,8 @@
 package com.galaxy.novaed.model;
 
 public class PersonalInfo {
-
+	
+	private int id;
 	private String firstName;
 	private String lastName;
 	private String school;
@@ -37,6 +38,12 @@ public class PersonalInfo {
 	}
 	public void setLogInfo(LogInfo logInfo) {
 		this.logInfo = logInfo;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 }

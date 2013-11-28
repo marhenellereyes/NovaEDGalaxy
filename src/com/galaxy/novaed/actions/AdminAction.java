@@ -10,7 +10,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class AdminAction extends ActionSupport {
 	
 	private LogInfo logInfo;
-	
+
 	public String execute(){
 		
 		Map session = ActionContext.getContext().getSession();

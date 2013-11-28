@@ -14,7 +14,7 @@ public class ConnectionClass {
 			try {
 				Class.forName("com.mysql.jdbc.Driver");
 				connection = (Connection) DriverManager
-						.getConnection("jdbc:mysql://localhost/novaed_galaxy?user=root");
+						.getConnection("jdbc:mysql://localhost/novaed_galaxy2?user=root");
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
 			} catch (SQLException e) {

@@ -1,7 +1,9 @@
 package com.galaxy.novaed.actions;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.catalina.User;
 
@@ -21,16 +23,18 @@ public class RegisterAction extends ActionSupport {
 	private String hidden;
 	private String userType;
 	
-	private List<String> userTypeList;
+	// private List<String> userTypeList;
+	private Map<Integer, String> userTypeList;
 	
 	
 	
 	public RegisterAction(){
 		
-		setUserTypeList(new ArrayList<String>());
-		getUserTypeList().add("student");
-		getUserTypeList().add("admin");
-		getUserTypeList().add("teacher");
+		
+		setUserTypeList(new HashMap<Integer, String>());
+		getUserTypeList().put(1,"administrator");
+		getUserTypeList().put(2,"trainee");
+		getUserTypeList().put(3,"teacher");
 		
 		hidden = "1";
 	}
@@ -49,7 +53,7 @@ public class RegisterAction extends ActionSupport {
 			LogInfo logInfo = new LogInfo();
 			logInfo.setUsername(username);
 			logInfo.setPassword(password);
-			logInfo.setUserType(userType);
+			logInfo.setUserType(Integer.parseInt(userType));
 			
 			sql.insertLoginInfo(logInfo);
 			
@@ -140,11 +144,11 @@ public class RegisterAction extends ActionSupport {
 		this.userType = userType;
 	}
 
-	public List<String> getUserTypeList() {
+	public Map<Integer, String> getUserTypeList() {
 		return userTypeList;
 	}
 
-	public void setUserTypeList(List<String> userTypeList) {
+	public void setUserTypeList(Map<Integer, String> userTypeList) {
 		this.userTypeList = userTypeList;
 	}
 }

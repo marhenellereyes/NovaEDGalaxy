@@ -4,7 +4,32 @@
     "http://struts.apache.org/dtds/struts-2.1.7.dtd">
     
 <struts>
+	
 	<package name="main" extends="struts-default">
+	
+		
+		<!-- default action-->
+		<default-action-ref name="default" />
+        <action name="default" class="com.galaxy.novaed.actions.DefaultAction">
+            <result name="success">pagemissing.jsp</result>
+    	</action>
+    	
+    	<action name="creategroup" class="com.galaxy.novaed.actions.CreateGroupAction">
+    		<result name="success">/Admin/creategroup.jsp</result>
+    	</action>
+    	
+    	<action name="viewgroups" class="com.galaxy.novaed.actions.ViewGroupsAction">
+    		<result name="success">/Admin/viewgroups.jsp</result>
+    	</action>
+    	
+    	<action name="editgroup" class="com.galaxy.novaed.actions.EditGroupAction">
+    		<result name="success">/Admin/editgroup.jsp</result>
+    	</action>
+    	
+    	<action name="home" class="com.galaxy.novaed.actions.HomeAction">
+    		<result name="success">home.jsp</result>
+    	</action>
+		
 		<action name="login" class="com.galaxy.novaed.actions.LoginAction">
 			<result name="success">/login.jsp</result>
 			<result name="error">/login.jsp</result>
@@ -15,14 +40,21 @@
 			
 		</action>
 		
+		
 		<action name="adminpage" class="com.galaxy.novaed.actions.AdminAction">
-			<result name="success">/admin.jsp</result>
+			<result name="success">/Admin/admin.jsp</result>
 		</action>
-
+		
+		
+	
+	
 		<action name="register" class="com.galaxy.novaed.actions.RegisterAction">
-			<result name="success">/registration.jsp</result>
+			<result name="success">/Admin/registration.jsp</result>
 			
 		</action>
+
+		
+		
 
 	</package>
 	

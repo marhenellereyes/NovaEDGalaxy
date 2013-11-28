@@ -4,7 +4,7 @@ public class LogInfo {
 
 	private String username;
 	private int id;
-	private String userType;
+	private int userType;
 	private String password;
 	
 	public String getUsername() {
@@ -19,10 +19,10 @@ public class LogInfo {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getUserType() {
+	public int getUserType() {
 		return userType;
 	}
-	public void setUserType(String userType) {
+	public void setUserType(int userType) {
 		this.userType = userType;
 	}
 	@Override

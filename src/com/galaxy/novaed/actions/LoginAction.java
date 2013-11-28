@@ -28,8 +28,15 @@ public class LoginAction extends ActionSupport{
 			session.put("logged-in", "true");
 			session.put("logInfo", getLogInfo());
 			
-			return getLogInfo().getUserType();
-			
+			if(getLogInfo().getUserType()==1){
+				return "admin";
+			}else if(getLogInfo().getUserType()==2){
+				return "trainee";
+			}else if(getLogInfo().getUserType()==3){
+				return "teacher";
+			}else{
+				return ERROR;
+			}
 	}
 	
 	public  String logout(){
